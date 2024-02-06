@@ -40,33 +40,69 @@ ________________________________
 
 Создайте Target Group, включите в неё две созданных ВМ.
 
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/4b82d3ea-22fc-4369-99db-7967354887a7)
+
+
 Создайте Backend Group, настройте backends на target group, ранее созданную. Настройте healthcheck на корень (/) и порт 80, протокол HTTP.
+
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/a7ea2327-cf50-420b-bd4a-7d7d18999861)
+
 
 Создайте HTTP router. Путь укажите — /, backend group — созданную ранее.
 
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/fe63ecdc-f3ca-4db4-855f-b1d18557f66c)
+
+
 Создайте Application load balancer для распределения трафика на веб-сервера, созданные ранее. Укажите HTTP router, созданный ранее, задайте listener тип auto, порт 80.
+
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/a3d9021f-fd73-450e-bb3d-e5af239b64a6)
+
 
 Протестируйте сайт curl -v <публичный IP балансера>:80
 
 #### Мониторинг
 Создайте ВМ, разверните на ней Zabbix. На каждую ВМ установите Zabbix Agent, настройте агенты на отправление метрик в Zabbix.
 
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/6d680307-270b-40a1-b65f-0883b92bfa63)
+
+
 Настройте дешборды с отображением метрик, минимальный набор — по принципу USE (Utilization, Saturation, Errors) для CPU, RAM, диски, сеть, http запросов к веб-серверам. Добавьте необходимые tresholds на соответствующие графики.
+
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/3dc2dce6-7ef4-49a1-9a0e-e82238efc860)
+
 
 #### Логи
 Cоздайте ВМ, разверните на ней Elasticsearch. Установите filebeat в ВМ к веб-серверам, настройте на отправку access.log, error.log nginx в Elasticsearch.
 
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/e4b1fa23-1ac5-4557-a77e-04260a21df25)
+
+
 Создайте ВМ, разверните на ней Kibana, сконфигурируйте соединение с Elasticsearch.
+
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/d77233ce-62b0-4252-8e09-accd10a5bbec)
+
 
 #### Сеть
 Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.
 
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/7c5024e3-8ec8-40b3-a358-045c23570a67)
+
+
 Настройте Security Groups соответствующих сервисов на входящий трафик только к нужным портам.
+
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/c78352df-6d8a-4208-a9a3-fabbd709ee7a)
+
 
 Настройте ВМ с публичным адресом, в которой будет открыт только один порт — ssh. Эта вм будет реализовывать концепцию bastion host . Синоним "bastion host" - "Jump host". Подключение ansible к серверам web и Elasticsearch через данный bastion host можно сделать с помощью ProxyCommand . Допускается установка и запуск ansible непосредственно на bastion host.(Этот вариант легче в настройке)
 
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/1f384834-d45f-4b2c-9f7b-5888fd359ab6)
+
+
 #### Резервное копирование
 Создайте snapshot дисков всех ВМ. Ограничьте время жизни snaphot в неделю. Сами snaphot настройте на ежедневное копирование.
+
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/068de8cc-7db7-469a-984c-1f3bd3a4f18e)
+
 
 #### Дополнительно
 Не входит в минимальные требования.
