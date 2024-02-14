@@ -67,6 +67,8 @@ ________________________________
 #### Мониторинг
 Создайте ВМ, разверните на ней Zabbix. На каждую ВМ установите Zabbix Agent, настройте агенты на отправление метрик в Zabbix.
 
+Zabbix сервер на виртуальной машине развернут с использованием ansibe ansible/zabbix_server.yaml https://github.com/vioas/DIPLOM_OBUKHOV.A/blob/main/Ansible/zabbix_server.yaml
+
 ![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/6d680307-270b-40a1-b65f-0883b92bfa63)
 
 
