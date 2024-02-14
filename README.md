@@ -60,7 +60,8 @@ ________________________________
 
 Протестируйте сайт curl -v <публичный IP балансера>:80
 
-https://github.com/vioas/DIPLOM_OBUKHOV.A/blob/main/Scrinshot/%D0%94%D0%A0.jpg?raw=true 
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/035a7ecc-2673-4faa-89b4-8fed3a54d9c9)
+
       
 
 #### Мониторинг
