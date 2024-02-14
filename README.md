@@ -60,7 +60,8 @@ ________________________________
 
 Протестируйте сайт curl -v <публичный IP балансера>:80
 
-
+https://github.com/vioas/DIPLOM_OBUKHOV.A/blob/main/Scrinshot/%D0%94%D0%A0.jpg?raw=true 
+      
 
 #### Мониторинг
 Создайте ВМ, разверните на ней Zabbix. На каждую ВМ установите Zabbix Agent, настройте агенты на отправление метрик в Zabbix.
