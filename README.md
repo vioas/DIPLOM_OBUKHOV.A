@@ -75,7 +75,7 @@ Zabbix сервер на виртуальной машине развернут 
 
 Пароль: zabbix
 
-На вирутальные машины с вебсайтом с использованием ansibe ansible/zabbix_agent.ayml установлены zabbix агенты.
+На вирутальные машины с вебсайтом с использованием ansibe [ansible/zabbix_agent.ayml](https://github.com/vioas/DIPLOM_OBUKHOV.A/blob/main/Ansible/zabbix_agent.yaml) установлены zabbix агенты.
 
 Настроены дашборды.
 
