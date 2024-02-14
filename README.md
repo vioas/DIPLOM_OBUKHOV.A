@@ -109,6 +109,8 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/c78352df-6d8a-4208-a9a3-fabbd709ee7a)
 
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/2119e89d-6ce2-4389-af95-4d81545e0bc5)
+
 
 Настройте ВМ с публичным адресом, в которой будет открыт только один порт — ssh. Эта вм будет реализовывать концепцию bastion host . Синоним "bastion host" - "Jump host". Подключение ansible к серверам web и Elasticsearch через данный bastion host можно сделать с помощью ProxyCommand . Допускается установка и запуск ansible непосредственно на bastion host.(Этот вариант легче в настройке)
 
