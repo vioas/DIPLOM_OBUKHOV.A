@@ -61,13 +61,24 @@ ________________________________
 Протестируйте сайт curl -v <публичный IP балансера>:80
 
 ![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/035a7ecc-2673-4faa-89b4-8fed3a54d9c9)
-
-      
-
+   
 #### Мониторинг
 Создайте ВМ, разверните на ней Zabbix. На каждую ВМ установите Zabbix Agent, настройте агенты на отправление метрик в Zabbix.
 
 Zabbix сервер на виртуальной машине развернут с использованием ansibe [ansible/zabbix_server.yaml](https://github.com/vioas/DIPLOM_OBUKHOV.A/blob/main/Ansible/zabbix_server.yaml) 
+
+Веб-консоль zabbix доступна из сети интернет по адресу (http://10.8.0.22)
+
+Данные для авторизации:
+
+Логин: Admin
+
+Пароль: zabbix
+
+На вирутальные машины с вебсайтом с использованием ansibe ansible/zabbix_agent.ayml установлены zabbix агенты.
+
+Настроены дашборды.
+
 
 ![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/6d680307-270b-40a1-b65f-0883b92bfa63)
 
