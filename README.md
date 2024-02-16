@@ -85,6 +85,9 @@ Zabbix сервер на виртуальной машине развернут 
 
 Настройте дешборды с отображением метрик, минимальный набор — по принципу USE (Utilization, Saturation, Errors) для CPU, RAM, диски, сеть, http запросов к веб-серверам. Добавьте необходимые tresholds на соответствующие графики.
 
+![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/e1046345-256e-470a-ba55-037012c31f24)
+
+
 ![image](https://github.com/vioas/DIPLOM_OBUKHOV.A/assets/142601752/3dc2dce6-7ef4-49a1-9a0e-e82238efc860)
 
 
